@@ -21,7 +21,7 @@ function App() {
     setRecargar(!recargar)
   }
 
-  async function ingrsar() {
+  async function ingresar() {
     const peticion = await fetch('http://localhost:3000/login?usuario=' + usuario + '&clave=' + clave, { credentials: 'include' })
     if (peticion.ok) {
       setLogueado(true)
@@ -56,7 +56,7 @@ function App() {
       <h1>Inicio de sesión </h1>
       <input placeholder='Usuario' type="text" name="usuario" id="usuario" value={usuario} onChange={cambiarUsuario} />
       <input placeholder='Clave' type="password" name="clave" id="clave" value={clave} onChange={cambiarClave} />
-      <button onClick={ingrsar}>Ingresar </button>
+      <button onClick={ingresar}>Ingresar </button>
 
 
 
