@@ -22,7 +22,7 @@ function App() {
   }
 
   async function ingresar() {
-    const peticion = await fetch('http://localhost:3000/login?usuario=' + usuario + '&clave=' + clave, { credentials: 'include' })
+    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND + '/login?usuario=' + usuario + '&clave=' + clave, { credentials: 'include' })
     if (peticion.ok) {
       setLogueado(true)
 
@@ -31,7 +31,7 @@ function App() {
     }
   }
   async function validar() {
-    const peticion = await fetch('http://localhost:3000/validar', { credentials: 'include' })
+    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND + '/validar', { credentials: 'include' })
     if (peticion.ok) {
       setLogueado(true)
 
